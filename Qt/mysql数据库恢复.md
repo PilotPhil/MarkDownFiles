@@ -1,0 +1,3 @@
+```spl
+create database ship;
+
