@@ -12,7 +12,7 @@ $$
 $$
 \begin{aligned}
 p(w)\sim(0,Q) \\
-p(v)\sim(0,R)
+p(v)\sim(0,R) \\
 \end{aligned}
 $$
 
@@ -45,14 +45,77 @@ $$
 
 并假设误差也服从正态分布$p(e_k) \sim (0,p)$
 
+问题转化为寻找合适的$K_k$使得误差得协方差矩阵得迹$tr(p)$最小
+
+若
+$$
+e_k=
+\begin{bmatrix}
+e_1 \\
+e_2 \\
+\end{bmatrix}
+$$
+
+其协方差矩阵为
+$$
+p=E[e e^T]
+\begin{bmatrix}
+E[e_1^2]   & E[e_1 e_2] \\
+E[e_2 e_1] & E[e_2^2]   \\
+\end{bmatrix}
+$$
+
+其迹为
+$$
+tr(p)=E[e_1^2]+E[e_2^2]
+$$
 
 
+开始计算
+$$
+P=E[e e^T] =E[(x_k-\hat{x_k}){(x_k-\hat{x_k})}^T]
+\tag{1}
+$$
+
+其中
+$$
+\begin{aligned}
+x_k-\hat{x_k} & =x_k-[\hat{x}_k^-+K_k(z_k-H\hat{x}_k^-)]        \\
+              & = x_k-\hat{x}_k^--K_kz_k+K_kH\hat{x}_k^-        \\
+              & = x_k-\hat{x}_k^--K_k(Hx_k+v_k)+K_kH\hat{x}_k^- \\
+              & = (x_k-\hat{x}_k^-)-K_kH(x_k-\hat{x}_k^-)-K_kv_k\\
+              & = (I-K_kH)(x_k-\hat{x}_k^-)-K_kv_k              \\
+              & = (I-K_kH)e_k^- -K_kv_k                         \\
+\end{aligned}
+$$
 
 
+故（1）式写为
+$$
+\begin{aligned}
+P & = E[[(I-K_kH)e_k^- -K_kv_k][(I-K_kH)e_k^- -K_kv_k]^T]               \\
+  & = E[[(I-K_kH)e_k^- -K_kv_k][{e_k^-}^T{(I-K_kH)}^T -v_k^T K_k^T]]    \\
+  & = E[(I-K_kH)e_k^- {e_k^-}^T{(I-K_kH)}^T-(I-K_kH)e_k^-v_k^T K_k^T-K_kv_k{e_k^-}^T{(I-K_kH)}^T+K_kv_kv_k^T K_k^T] \\
+\end{aligned}
+$$
 
+其中，因为$e_k v_k$独立，且$E[e_k]=E[v_k]=0$，所以
+$$
+\begin{aligned}
+E[(I-K_kH)e_k^-v_k^T K_k^T]=(I-K_kH)E[e_k^-]E[v_k^T]K_k^T=0 \\
+E[K_kv_k{e_k^-}^T{(I-K_kH)}^T]=K_kE[v_k]E[{e_k^-}^T]{(I-K_kH)}^T=0 \\
+\end{aligned}
+$$
 
-
-
+所以协方差矩阵p可以简化为：
+$$
+\begin{aligned}
+p & = E[(I-K_kH)e_k^- {e_k^-}^T{(I-K_kH)}^T+K_kv_kv_k^T K_k^T]      \\
+  & = (I-K_kH)E[e_k^- {e_k^-}^T]{(I-K_kH)}^T+K_kE[v_k v_k^T] K_k^T  \\
+  & = (I-K_kH)p_k^- {(I-K_kH)}^T +K_k R K_k^T                       \\
+  & = (p_k^- - K_kHp_k^-)
+\end{aligned}
+$$
 
 
 
