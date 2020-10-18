@@ -113,9 +113,18 @@ $$
 p & = E[(I-K_kH)e_k^- {e_k^-}^T{(I-K_kH)}^T+K_kv_kv_k^T K_k^T]      \\
   & = (I-K_kH)E[e_k^- {e_k^-}^T]{(I-K_kH)}^T+K_kE[v_k v_k^T] K_k^T  \\
   & = (I-K_kH)p_k^- {(I-K_kH)}^T +K_k R K_k^T                       \\
-  & = (p_k^- - K_kHp_k^-)
+  & = (p_k^- - K_kHp_k^-)(I^T-H^TK_k^T)+K_kRK_k^T                   \\
+  & = p_k^--p_k^-H^TK_k^T-K_kHp_k^-+K_kHp_k^-H^TK_k^T+K_kRK_k^T     \\
 \end{aligned}
 $$
+
+
+
+
+
+
+
+
 
 
 
