@@ -13,7 +13,7 @@
 ![](.pic/2.png)
 
 - C.ios端：AceMark
-![](.pic/6.png)
+![](.pic/AceMark.png)
 
 
 
