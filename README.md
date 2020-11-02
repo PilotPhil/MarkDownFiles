@@ -16,7 +16,7 @@
 
 下载**Typora**
 
-并在设置中勾选：
+并在设置中勾选：内联公式
 
 <img src=".\.pic\typora.png" style="zoom:50%;" />
 
