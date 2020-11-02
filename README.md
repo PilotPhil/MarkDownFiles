@@ -5,15 +5,23 @@
 # 2.如何阅读
 - A.在chrome浏览器端：下载此插件，并刷新页面
    - 网页端公式可能无法完整显示，或者不显示，建议采用第二种方法阅读。
-  
+
 ![](.pic/1.png)
 
 - B.本地端：拉取库到本地，并安装VS code，并安装插件：
 
-![](.pic/2.png)
+<img src=".pic/2.png" style="zoom:50%;" />
+
+**或**
+
+下载**Typora**
+
+并在设置中勾选：
+
+<img src=".\.pic\typora.png" style="zoom:50%;" />
 
 - C.ios端：AceMark
-![](.pic/AceMark.png)
+<img src=".pic/AceMark.png" style="zoom:33%;" />
 
 
 
