@@ -1,0 +1,46 @@
+## 1.线性系统的频域分析与校正
+
+频域分析的研究意义：
+- 前面分别学习的时域内的分析法和根轨迹分析法，根轨迹法实际是复域分析法
+- 频域法是基于频率特性或者频率响应对系统进行分析和设计的一种**图解方法**，也称为频率响应法
+- 其优点有：
+  - 系统的传递函数难以确定时，可以通过实验法确定频率特性
+  - 一定条件下，能够推广到非线性系统中
+
+
+## 前提补充
+欧拉公式：
+$$
+\begin{aligned}
+e^{it}  & = cost+isint    \\
+e^{-it} & = cost-isint    \\
+cost    & = \frac{e^{it}+e^{-it}}{2}     \\
+sint    & = \frac{e^{it}-e^{-it}}{2}
+\end{aligned}
+$$
+
+拉普拉斯变换
+$$
+F(s)=\int_0^{+\infty} f(t) e^{-st} dt
+$$
+
+正弦信号的拉普拉斯变换
+$$
+\begin{aligned}
+r(t) & = Asin\omega t       \\
+R(s) & = \int_0^{+\infty} Asin\omega t e^{-st} dt    \\
+     & = -\frac{A}{s} \int_0^{+\infty} sin\omega t de^{-st}    \\
+     & = -\frac{A}{s}[sin\omega t e^{-st}|_0^{+\infty}-\omega\int_0^{+\infty} e^{-st} cos\omega t dt]   \\
+     & = \frac{A \omega}{s} \int_0^{+\infty} e^{-st} cos\omega t dt     \\
+     & = -\frac{A \omega}{s^2} \int_0^{+\infty} cos\omega t de^{-st}    \\
+     & = -\frac{A \omega}{s^2} [cos\omega t e^{-st}|_0^{+\infty}+\omega \int_0^{+\infty}e^{-st} sin\omega t]    \\
+     & = -\frac{A \omega}{s^2} [0-1+w\int_0^{+\infty}e^{-st} sin\omega t]       \\
+
+     得方程式：
+R(s) & = \frac{A \omega}{s^2}[1-\frac{1}{A}\omega R(s)]   \\
+R(s) & = \frac{A\omega}{s^2+\omega^2}       \\
+\end{aligned}
+$$
+
+
+## 2.频率特性的基本概念
