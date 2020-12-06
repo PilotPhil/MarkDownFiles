@@ -19,7 +19,26 @@ $$
 
 
 
+## 2.一阶线性ODE
+$$
+y^{'}+p(x)y=q(x)
+$$
 
+解：
+$$
+\begin{aligned}
+y^{'}+p(x)y & = q(x)       \\
+e^{\int p(x)dx}[y^{'}+p(x)y] & = q(x)e^{\int p(x)dx}       \\
+[ye^{\int p(x)dx}]^{'} & = q(x)e^{\int p(x)dx}       \\
+ye^{\int p(x)dx} & = \int q(x)e^{\int p(x)dx} dx+c       \\
+y & = e^{-\int p(x)dx}[\int q(x)e^{\int p(x)dx} dx+c]       \\
+\end{aligned}
+$$
+
+得
+$$
+y= e^{-\int p(x)dx}[\int q(x)e^{\int p(x)dx} dx+c]
+$$
 
 
 
