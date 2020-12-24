@@ -1,5 +1,3 @@
-# 常见ODE解法
-
 ## 1.二阶常系数齐次ODE
 $$
 y^{''}+py^{'}+qy=0
@@ -39,6 +37,68 @@ $$
 $$
 y= e^{-\int p(x)dx}[\int q(x)e^{\int p(x)dx} dx+c]
 $$
+
+## 3.正弦余弦变换
+$$
+\begin{aligned}
+    f(x) & =\Sigma_{n=1}^{+\infty} A_n sin\frac{n\pi}{l} x \\
+    A_n  & =\frac{2}{l} \int_0^l f(x) sin\frac{n\pi}{l} dx   n=1,2,3,...\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+    f(x) & =\frac{A_0}{2}+\Sigma_{n=1}^{+\infty} A_n cos\frac{n\pi}{l} x \\
+    A_n  & =\frac{2}{l} \int_0^l f(x) cos\frac{n\pi}{l} dx  n=0,1,2,...\\
+\end{aligned}
+$$
+
+## 4.三角函数正交性
+$$
+\int_{-\pi}^{\pi} sinnxsinmxdx=
+\begin{cases}
+    0,m\neq n\\
+    \pi,m=n
+\end{cases}
+$$
+
+$$
+\int_{-\pi}^{\pi} cosnxcosmxdx=
+\begin{cases}
+    0,m\neq n\\
+    \pi,m=n
+\end{cases}
+$$
+
+## 5.三角函数相关
+$$
+\begin{aligned}
+  sin\alpha cos\beta & =\frac{1}{2}[sin(\alpha+\beta)+sin(\alpha-\beta)]  \\
+  cos\alpha sin\beta & =\frac{1}{2}[sin(\alpha+\beta)-sin(\alpha-\beta)]  \\
+  cos\alpha cos\beta & =\frac{1}{2}[cos(\alpha+\beta)+cos(\alpha-\beta)]  \\
+  sin\alpha sin\beta & =\frac{1}{2}[cos(\alpha-\beta)-cos(\alpha+\beta)]  \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+  e^{j\omega t} & = cos\omega t+j sin\omega t \\
+  e^{-j\omega t} & = cos\omega t-j sin\omega t \\
+\end{aligned}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
