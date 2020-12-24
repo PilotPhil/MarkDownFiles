@@ -145,7 +145,7 @@ $$
 |   $sin\omega t$ | $\frac{\omega}{s^2+\omega^2}$                           |
 |   $cos\omega t$ | $\frac{s}{s^2+\omega^2}$                                |
 |   $\frac{1}{2c \sqrt{\pi t}} e^{-\frac{x^2}{4c^2 t}}$|$e^{-c^2\alpha^2 t}$|
-|
+
 
 
 # 8.留数法
