@@ -148,7 +148,42 @@ $$
 |
 
 
+# 8.留数法
+$$
+\begin{aligned}
+F(s) & =\frac{B(s)}{A(s)}=\frac{b_ms^m+b_{m-1}s^{m-1}+...+b_1s+b_0}{a_ns^n+a_{n-1}s^{n-1}+...+a_1s+a_0}        \\
+     & =\frac{(s-z_1)...(s-z_m)}{(s-p_1)...(s-p_n)}   \\
+\end{aligned}
+$$
 
+- $A(s)=0$无重根时
+$$
+F(s)=\frac{C_1}{s-p_1}+\frac{C_2}{s-p_2}+...+\frac{C_n}{s-p_n}=\Sigma^n_{i=1}\frac{C_i}{s-p_i}
+$$
+
+解$C_i$（两种方法）:
+$$
+\begin{aligned}
+C_i & = \frac{B(s)}{A^{'}(s)}\bigg|_{s=p_i}     \\
+C_i & = \lim_{s \to p_i}(s-p_i)F(s)             \\
+\end{aligned}
+$$
+
+- $A(s)=(s-p_1)(s-p_1)...(s-p_n)=0$有重根时，$p_1$为m重根（$C_m \to C_1$），其余为单根
+$$
+F(s)=\frac{C_m}{(s-p_1)^m}+\frac{C_{m-1}}{(s-p_1)^{m-1}}+...+\frac{C_1}{s-p_1}+\frac{C_{m+1}}{s-p_{m+1}}+...+\frac{C_n}{s-p_n}
+$$
+
+其中$C_{m+1}...C_n$用留数法求
+
+对于$C_m...C_1$:
+$$
+C_{m-j}=\frac{1}{j!}\lim_{s \to p_1}\frac{d^j[(s-p_1)^mF(s)]}{d s^j}
+$$
+
+$$
+j:0 \to m-1
+$$
 
 
 
