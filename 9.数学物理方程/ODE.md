@@ -98,7 +98,7 @@ $$
 \end{aligned}
 $$
 
-性质
+性质：
 - 线性：$F[af(x)+bg(x)]=aF[f(x)]+bF[g(x)]=aF(\alpha)+bG(\alpha)$
 - 时移：$F[f(x-c)]=e^{-i\alpha c}F[f(x)]=e^{-i\alpha c}F(\alpha)$
 - 频移：$F[e^{i\alpha_0 x}f(x)]=F(\alpha-\alpha_0)$
@@ -122,7 +122,7 @@ $$
 \end{aligned}
 $$
 
-性质
+性质：
 - 线性：$L[af(t)+bg(t)]=aF(s)+bG(s)$
 - 时移：$L[f(t-t_0)]=e^{-st_0}F(s)$
 - s域平移：$L[e^{s_0 t} f(t)]=F(s-s_0)$
@@ -134,7 +134,7 @@ $$
   - $L^{-1}[F(s)G(s)]=f(t)*g(t)$
 
 
-
+常见变换对：
 
 
 
