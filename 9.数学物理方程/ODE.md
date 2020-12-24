@@ -136,8 +136,16 @@ $$
 
 常见变换对：
 
-
-
+|   信号          |  变换                                                    |
+| ----            | ----                                                    |
+|   $\delta(t)$   |   1                                                     |
+|   u(t)          |   $\frac{1}{s}$                                         |
+|   t             |   $\frac{1}{s^2}$                                       |
+|   $e^{at}$      |   $\frac{1}{s-a}$                                       |
+|   $sin\omega t$ | $\frac{\omega}{s^2+\omega^2}$                           |
+|   $cos\omega t$ | $\frac{s}{s^2+\omega^2}$                                |
+|   $\frac{1}{2c \sqrt{\pi t}} e^{-\frac{x^2}{4c^2 t}}$|$e^{-c^2\alpha^2 t}$|
+|
 
 
 
