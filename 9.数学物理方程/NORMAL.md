@@ -42,14 +42,14 @@ $$
 $$
 \begin{aligned}
     f(x) & =\Sigma_{n=1}^{+\infty} A_n sin\frac{n\pi}{l} x \\
-    A_n  & =\frac{2}{l} \int_0^l f(x) sin\frac{n\pi}{l} dx   n=1,2,3,...\\
+    A_n  & =\frac{2}{l} \int_0^l f(x) sin\frac{n\pi}{l} dx,  n=1,2,3,...\\
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
     f(x) & =\frac{A_0}{2}+\Sigma_{n=1}^{+\infty} A_n cos\frac{n\pi}{l} x \\
-    A_n  & =\frac{2}{l} \int_0^l f(x) cos\frac{n\pi}{l} dx  n=0,1,2,...\\
+    A_n  & =\frac{2}{l} \int_0^l f(x) cos\frac{n\pi}{l} dx,  n=0,1,2,...\\
 \end{aligned}
 $$
 
