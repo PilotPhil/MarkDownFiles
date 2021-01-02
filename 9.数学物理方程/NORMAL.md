@@ -107,9 +107,10 @@ $$
   - $F[f^{(n)}(x)]=(i\alpha)^n F[f(x)]=(i\alpha)^n F(\alpha)$
 - $F[xf(x)]=i\frac{d}{d\alpha}F(\alpha)$
 - $F[x^nf(x)]=i^n \frac{d^n}{d\alpha^n}F(\alpha)$
+- 积分：$F[\int_{-\infty}^t f(\delta) d\delta]=\frac{F[f(t)]}{j\omega}$
 - 卷积：$f(x)*g(x)=\int_{-\infty}^{+\infty} f(x-\tau)g(\tau) d\tau$
   - $F[f(x)*g(x)]=F[f(x)]F[g(x)]=F(\alpha)G(\alpha)$
-  - $F^{-1}[f(x)*g(x)]=F^{-1}[f(x)]F^{-1}[g(x)]=f(x)*g(x)$
+  - $F^{-1}[F(\alpha)G(\alpha)]=F^{-1}[F(\alpha)]*F^{-1}[G(\alpha)]=f(x)*g(x)$
   - $F[f(x)g(x)]=\frac{1}{2\pi}F[f(x)]*F[g(x)]=\frac{1}{2\pi}F(\alpha)*G(\alpha)$
   - $F^{-1}[F(\alpha)*g(\alpha)]=2\pi f(x)g(x)$
 - Parseval能量守恒: $\int_{-\infty}^{+\infty} |f(x)|^2 dx=\frac{1}{2\pi} \int_{-\infty}^{+\infty} |F(\alpha)|^2 d\alpha$
@@ -127,7 +128,7 @@ $$
 - 时移：$L[f(t-t_0)]=e^{-st_0}F(s)$
 - s域平移：$L[e^{s_0 t} f(t)]=F(s-s_0)$
 - 微分：$L[f^{'}(t)]=sF(s)-f(0)$
-  - $L[f^{(n)}(t)]=s^nF(s)-\Sigma_\lambda^{n-1} s^{n-1-\lambda}f^{(\lambda)}(0)$
+  - $L[f^{(n)}(t)]=s^nF(s)-\Sigma_{\lambda=1}^{n-1} s^{n-1-\lambda}f^{(\lambda)}(0)$
 - 积分：$L[\int_0^t f(\tau) d\tau]=\frac{F(s)}{s}$
 - $L[t^n f(t)]=(-1)^n F^{(n)}(s)$
 - 卷积：$L[f(t)*g(t)]=F(s)G(s)$
