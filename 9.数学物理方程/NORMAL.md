@@ -128,7 +128,7 @@ $$
 - 时移：$L[f(t-t_0)]=e^{-st_0}F(s)$
 - s域平移：$L[e^{s_0 t} f(t)]=F(s-s_0)$
 - 微分：$L[f^{'}(t)]=sF(s)-f(0)$
-  - $L[f^{(n)}(t)]=s^nF(s)-\Sigma_{\lambda=1}^{n-1} s^{n-1-\lambda}f^{(\lambda)}(0)$
+  - $L[f^{(n)}(t)]=s^nF(s)-\Sigma_{\lambda=0}^{n-1} s^{n-1-\lambda}f^{(\lambda)}(0)$
 - 积分：$L[\int_0^t f(\tau) d\tau]=\frac{F(s)}{s}$
 - $L[t^n f(t)]=(-1)^n F^{(n)}(s)$
 - 卷积：$L[f(t)*g(t)]=F(s)G(s)$
