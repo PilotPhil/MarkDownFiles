@@ -22,7 +22,7 @@
 
 - C.ios端：AceMark
 
-<img src="pic/AceMark.png" style="zoom:15%;" />
+<img src="pic/AceMark.png" style="zoom:45%;" />
 
 
 
