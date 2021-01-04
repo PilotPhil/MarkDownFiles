@@ -1,3 +1,0 @@
-```spl
-create database ship;
-
