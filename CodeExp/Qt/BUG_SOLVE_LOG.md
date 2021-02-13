@@ -15,6 +15,7 @@ lineseries->attachAxis(axisX);
 lineseries->attachAxis(axisY);
 实例：
 
+```c++
 void MYCHART::myAddSeries(QLineSeries *series)
 {
     chart->addSeries(series);//先添加series
@@ -22,6 +23,7 @@ void MYCHART::myAddSeries(QLineSeries *series)
     series->attachAxis(axisX);//再设置坐标轴
     series->attachAxis(axisY);
 }
+```
 
 
 ## 2.BUG-No rule to make target needed by
