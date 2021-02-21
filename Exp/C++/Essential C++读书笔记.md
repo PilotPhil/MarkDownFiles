@@ -283,15 +283,53 @@ void StringCopy(char *strDestination, const char *strSource);
 
 总结：对于非内部数据类型的输入参数，应当用const引用传递，目的是为了提高效率。对于内部数据类型，直接使用值传递即可，没必要。
 
+### 2.用const修饰函数的返回值
 
+- 如果给以“指针传递”方式的函数返回值加const 修饰，那么函数返回值（即指针）的**内容不能被修改**，且该**返回值只能被赋给加const 修饰的同类型指针**。
 
+```c++
+const char * GetString(void);
 
+char * str=GetString();//错误，const修饰的返回值只能赋值给const修饰的同类型指针
+const cher * str=GetString();//正确
+```
 
+- 如果函数返回值采用“值传递方式”，由于函数会**把返回值复制到外部临时的存储单元中**，加const 修饰没有任何价值。例如不要把函数`int GetInt(void)` 写成`const int GetInt(void)`。
+- 同理不要把函数`A GetA(void) `写成`const A GetA(void)`，其中A 为用户自定义的数据类型。如果**返回值不是内部数据类型**，将函数`A GetA(void) `改写为`const A & GetA(void)`的确能提高效率。但此时千万千万要小心，一定要搞清楚函数究竟是想**返回一个对象的“拷贝”还是仅返回“别名”**就可以了，否则程序会出错。
 
+### 3.const成员函数
 
+**任何不会修改数据成员**的函数都应该声明为const 类型。如果在编写const 成员函数时，不慎修改了数据成员，或者调用了其它非const 成员函数，编译器将指出错误，这无疑会提高程序的健壮性。
 
+```c++
+class Stack
+{
+public:
+ void Push(int elem);
+ int Pop(void);
+ int GetCount(void) const; // const 成员函数
+private:
+ int m_num;
+ int m_data[100];
+};
+int Stack::GetCount(void) const
+{
+ ++m_num; // 编译错误，企图修改数据成员m_num
+ Pop(); // 编译错误，企图调用非const 函数
+ return m_num;
+}
+```
 
+类stack 的成员函数GetCount 仅用于计数，从逻辑上讲GetCount 应当为const 函数。编译器将指出GetCount 函数中的错误。
 
+const 成员函数的声明看起来怪怪的：**const 关键字只能放在函数声明的尾部**，大概是因为其它地方都已经被占用了。
+
+Const成员函数的几点规则：
+
+- **const对象只能访问const成员函数**,而**非const对象可以访问任意的成员函数**,包括const成员函数
+- const对象的成员是不可修改的,然而const对象通过指针维护的对象却是可以修改的
+- const成员函数不可以修改对象的数据,不管对象是否具有const性质.它在编译时,以是否修改成员数据为依据,进行检查
+- 然而加上mutable修饰符的数据成员,对于任何情况下通过任何手段都可修改,自然此时的const成员函数是可以修改它的
 
 
 
